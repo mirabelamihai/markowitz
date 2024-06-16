@@ -1,0 +1,32 @@
+import os
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Datele pentru companii și capitalizarea de piață
+companies = ['NVDA', 'ISRG', 'ABB', 'IRBT', 'FANUY', 'KEYENCE', 'OMRON', 'CGNX', 'ROK', 'SIEGY']
+market_caps = [3244, 151, 65, 2.13, 45, 128, 19, 8, 36, 115]  # În miliarde de dolari
+# Crearea unui DataFrame pentru sortare
+data = {'Companies': companies, 'Market Cap': market_caps}
+df = pd.DataFrame(data)
+
+# Sortarea DataFrame-ului după capitalizarea de piață
+df_sorted = df.sort_values(by='Market Cap')
+
+# Crearea graficului de tip bar
+plt.figure(figsize=(10, 6))
+bars = plt.bar(companies, market_caps, color='turquoise')   
+plt.xlabel('Companii')
+plt.ylabel('Capitalizare de piață (miliarde $)')
+plt.title('Capitalizarea de Piață a Companiilor din ETF-ul BOTZ')
+plt.xticks(rotation=25)
+
+# Adăugarea valorilor deasupra barurilor
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval + 15, round(yval, 2), ha='center', va='bottom')
+
+plt.show()
+output_dir = './figures'
+os.makedirs(output_dir, exist_ok=True)
+plt.savefig(os.path.join(output_dir, 'grafic capitalizarea de piață a companiilor.png'))        
+plt.show()

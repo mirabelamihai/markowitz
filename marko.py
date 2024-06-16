@@ -135,7 +135,7 @@ def markovitz():
     plt.scatter(df.std().iloc[1] * np.sqrt(252), df.mean().iloc[1], c='yellow')
     plt.scatter(stds[argmin], returns[argmin], c='red')
     plt.title('Efficient Frontier')
-    plt.colorbar(label='expected returns')
+    plt.colorbar(label='expected returns')   
     plt.xlabel('expected volatility')
     plt.ylabel('expected returns')
     plt.savefig('ef.png')
