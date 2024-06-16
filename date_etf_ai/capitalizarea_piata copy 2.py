@@ -37,7 +37,7 @@ plt.figure(figsize=(14, 10))
 percentages = df_sorted['Market Value ($)'] / df_sorted['Market Value ($)'].sum() * 100
 plt.axis('equal')
 
-small_percentage_labels = ['Other']
+small_percentage_labels = ['Altele']
 small_percentage_value = 0
 small_percentages = [0]
 for i in range(len(percentages)):
@@ -53,7 +53,7 @@ small_percentages[0] = small_percentage_value
 plt.pie(small_percentages, labels=small_percentage_labels, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors, pctdistance=0.7,)
 # plt.xlabel('Market Value ($ trilioane)')
 # plt.ylabel('Ticker')
-plt.title('Market Value of Companies in ETF BOTZ (Sorted)')
+plt.title('Valoarea de piață a companiilor ETF BOTZ (%)')
 
 # # Adăugarea valorilor deasupra barurilor fără a tăia marginea graficului
 # for bar in bars:

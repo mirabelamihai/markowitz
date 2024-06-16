@@ -34,9 +34,9 @@ df_sorted = df.sort_values(by='Market Value ($)')
 # Crearea graficului de tip bar orizontal
 plt.figure(figsize=(14, 10))
 bars = plt.barh(df_sorted['Ticker'], df_sorted['Market Value ($)'], color='turquoise')
-plt.xlabel('Market Value ($ trilioane)')
+plt.xlabel('Valoarea de piață ($ trilioane)')
 plt.ylabel('Ticker')
-plt.title('Market Value of Companies in ETF BOTZ (Sorted)')
+plt.title('Valoarea de piață a companiilor in ETF BOTZ')
 
 # Adăugarea valorilor deasupra barurilor fără a tăia marginea graficului
 for bar in bars:
